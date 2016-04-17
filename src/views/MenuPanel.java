@@ -19,6 +19,7 @@ import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JSpinner.DefaultEditor;
 import java.awt.*;
+import java.time.Clock;
 import java.util.List;
 
 /**
@@ -27,7 +28,7 @@ import java.util.List;
  */
 public class MenuPanel extends JFrame{
     
-
+    private Clock dayInterval;
     private JLabel stationName;
     private JLabel item;
     private JLabel cost;
