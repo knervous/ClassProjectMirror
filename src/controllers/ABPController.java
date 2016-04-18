@@ -136,6 +136,7 @@ public class ABPController {
             System.out.printf(" to $%.2f\n", signObject.getCost());
             i++;
         }
+        // Got rid of duplicate code here. George
     }
     /*
     
