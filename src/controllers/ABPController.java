@@ -120,36 +120,21 @@ public class ABPController {
     
     class SignTimer implements ActionListener {
         private StoreObjects signObject;
-        boolean setBack = true;
         int i = 0;
         
         @Override
         public void actionPerformed(ActionEvent ae) {
-            setBack = !setBack;
-            
-            if (setBack == false){
-                if (i > 0){
-                    System.out.printf("%s price returned from $%.2f", signObject.getName(), signObject.getCost());
-                    signObject.changeCost((float)(signObject.getCost() * 1.176470588));
-                    System.out.printf(" to $%.2f\n", signObject.getCost());
-                }
-                signObject = randomize.getRandObject(randomize.getAllFood());
-                System.out.println("Food Object: " + signObject.getName());
-                System.out.printf("Price changed from $%.2f", signObject.getCost());
-                signObject.changeCost((float)(signObject.getCost() * .85));
-                System.out.printf(" to $%.2f\n", signObject.getCost());
-                i++;
-            }else{
+            if (i > 0){
                 System.out.printf("%s price returned from $%.2f", signObject.getName(), signObject.getCost());
                 signObject.changeCost((float)(signObject.getCost() * 1.176470588));
                 System.out.printf(" to $%.2f\n", signObject.getCost());
-                
-                signObject = randomize.getRandObject(randomize.getAllFood());
-                System.out.println("Food Object: " + signObject.getName());
-                System.out.printf("Price changed from $%.2f", signObject.getCost());
-                signObject.changeCost((float)(signObject.getCost() * .85));
-                System.out.printf(" to $%.2f\n", signObject.getCost());
             }
+            signObject = randomize.getRandObject(randomize.getAllFood());
+            System.out.println("Food Object: " + signObject.getName());
+            System.out.printf("Price changed from $%.2f", signObject.getCost());
+            signObject.changeCost((float)(signObject.getCost() * .85));
+            System.out.printf(" to $%.2f\n", signObject.getCost());
+            i++;
         }
     }
     /*
